@@ -16,10 +16,10 @@ public function main()
 			io:println(payload);
 		} else {
 			// if an error occured while retrieving the text payload, print the error.
-			io:println(<string> payload.detail().message);
+			io:println(payload.detail());
 		}
 	} else {
 		// if an error occured when getting the response, print the error.
-		io:println(<string> res.detail().message);
+		io:println(res.detail());
 	}
 }

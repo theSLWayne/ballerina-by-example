@@ -2,22 +2,20 @@
 // A worker is a sequence of statements that is concurrently with other workers in the functions.
 
 import ballerina/io;
+public function main() {
 
-public function main()
-{
-	// Creating a worker
-	worker w1
-	{
-		io:println("Hello World! #m"); 
-	}
-
-	worker w2
-	{
-		io:println("Hello World! #n"); 
-	}
-
-	worker w3
-	{
-		io:println("Hello World! #k"); 
-	}
+    @strand {thread: "any"}
+    worker w1 {
+        io:println("Hello, World! #1");
+    }    
+		
+		@strand {thread: "any"}
+    worker w2 {
+        io:println("Hello, World! #2");
+    }    
+		
+		@strand {thread: "any"}
+    worker w3 {
+        io:println("Hello, World! #3");
+    }
 }
