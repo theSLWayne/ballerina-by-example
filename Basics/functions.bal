@@ -100,4 +100,3 @@ public function main() {
     string[] subjectList = ["Math", "Science"];
     printStudentDetails("Saman", 18, ...subjectList);
 }
-
